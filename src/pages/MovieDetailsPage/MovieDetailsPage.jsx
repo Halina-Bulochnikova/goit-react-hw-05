@@ -3,7 +3,8 @@ import { NavLink, Outlet } from "react-router-dom";
 const MovieDetailsPage = () => {
   return (
     <div>
-      <nav>
+      <h2>Movies$1</h2>
+     <nav>
         <NavLink to="cast">Cast</NavLink>
         <NavLink to="reviews">Reviews</NavLink>
       </nav>
