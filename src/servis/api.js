@@ -10,7 +10,7 @@ const options = axios.create({
     Authorization: `Bearer ${API_TOKEN}`,
   },
 });
-const fetchRending = async () => {
+export const fetchTrending = async () => {
   try {
     const response = await options.get(
       "https://api.themoviedb.org/3/trending/movie/day?language=en-US"
@@ -22,4 +22,14 @@ const fetchRending = async () => {
   }
 };
 
-export default fetchRending;
+
+
+export const fetchMoviesById = async (movieId) => {
+  try {
+    const response = await options.get(`/movie/${movieId}?language=en-US`);
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching movie by ID:", error.message);
+    throw error;
+  }
+};

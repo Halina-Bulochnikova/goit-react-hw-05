@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import fetchTrending from "../../servis/api";
-import TrendingList from '../../components/TrendingList/TrendingList';
+import { fetchTrending } from '../../servis/api';
+import MovieList from "../../components/MovieList/MovieList";
 
 const HomePage = () => {
   const [results, setResults] = useState([]);
@@ -14,6 +14,6 @@ const HomePage = () => {
   }, []);
 
 
-  return <TrendingList results={results} />;
+  return <MovieList results={results} />;
 }
 export default HomePage;

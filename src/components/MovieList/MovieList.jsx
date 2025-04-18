@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const TrendingList = ({results}) => {
+const MovieList = ({ results }) => {
   return (
     <div>
       <h2>Trending today</h2>
@@ -8,7 +8,7 @@ const TrendingList = ({results}) => {
         {results.map((result) => {
           return (
             <li key={result.id}>
-              <Link to="result.id.toString">
+              <Link to={`/movies/${result.id}`}>
                 {result.title || result.original_title}
               </Link>
             </li>
@@ -18,4 +18,4 @@ const TrendingList = ({results}) => {
     </div>
   );
 };
-export default TrendingList;
+export default MovieList;
