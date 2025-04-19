@@ -1,19 +1,49 @@
 import SearchBar from '../../components/SearchBar/SearchBar';
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import MovieList from '../../components/MovieList/MovieList';
+import { fetchMoviesByQuery } from "../../servis/api";
+
+import { useSearchParams } from "react-router-dom";
+
 
 
 const MoviesPage = () => {
-  const navigate = useNavigate();
+  const [results, setResults] = useState([]);
+  const [searchParams, setSearchParams] = useSearchParams();
+  
+  const query = searchParams.get("query") || "";
+  
 
-  const handleSearch = (query) => {
-    if (!query) return;
-    navigate(`?query=${encodeURIComponent(query)}`);
+
+  useEffect(() => {
+    const getData = async () => {
+      if (!query){
+        setResults([]);
+        return;
+      }
+      try {
+        const data = await fetchMoviesByQuery(query);
+        setResults(data || []);
+      } catch (error) {
+        console.error("Error", error);
+      }
+    };
+    getData();
+  }, [query]);
+
+  const handleChangeQuery = (newQuery) => {
+    const trimmed = newQuery.trim();
+    setSearchParams(trimmed ? { query: trimmed } : {});
   };
+  const filterMovies = results.filter((result) =>
+    result.title.toLowerCase().includes(query.toLowerCase())
+  );
 
 
   return (
     <div>
-      <SearchBar onSubmit={handleSearch} />
+      <SearchBar handleChangeQuery={handleChangeQuery} />
+      <MovieList results={filterMovies} />
     </div>
   );
 };

@@ -22,6 +22,18 @@ export const fetchTrending = async () => {
   }
 };
 
+export const fetchMoviesByQuery = async (query) => {
+  try {
+    const response = await options.get(
+      `/search/movie?query=${query}&language=en-US&page=1&include_adult=false`
+    );
+    return response.data.results;
+  } catch (error) {
+    console.error("Error fetching movies by query:", error.message);
+    throw error;
+  }
+}
+
 
 
 export const fetchMoviesById = async (movieId) => {
