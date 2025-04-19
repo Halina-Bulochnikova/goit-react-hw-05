@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { fetchCastByMoviesId } from "../../servis/api";
+import css from "./MovieCast.module.css";
 
 const MovieCast = () => {
   const { movieId } = useParams();
@@ -18,10 +19,10 @@ const MovieCast = () => {
     getData();
   }, [movieId]);
   return (
-    <div>
-      <ul>
+    <div className={css.movieCast}>
+    <ul className={css.castList}>
         {casts.map((cast) => (
-          <li key={cast.id}>
+          <li key={cast.id} className={css.castItem}>
             <img
               src={
                 cast.profile_path
@@ -31,8 +32,8 @@ const MovieCast = () => {
               alt={cast.name}
               width="200px"
             />
-            <p>{cast.name}</p>
-            <p>Character: {cast.character}</p>
+            <p className={css.castText}>{cast.name}</p>
+            <p className={css.castText}>Character: {cast.character}</p>
           </li>
         ))}
       </ul>

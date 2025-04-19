@@ -1,21 +1,16 @@
-import { Link } from "react-router-dom";
-
-const MovieList = ({results}) => {
-  return (
-    <div>
-      <h2>Trending today</h2>
-      <ul>
-        {results.map((result) => {
-          return (
-            <li key={result.id}>
-              <Link to="result.id.toString">
-                {result.title || result.original_title}
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
-    </div>
-  );
-};
-export default MovieList;
+.movieList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  padding: 16px;
+  font-size: 24px;
+  color: rgb(35, 49, 233);
+}
+.movieItem {
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  width: 200px;
+}

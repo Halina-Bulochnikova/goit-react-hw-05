@@ -1,0 +1,41 @@
+.movieDetailsPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+}
+.titleMovie {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 56px;
+}
+.textMovie {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 24px;
+  width: 600px;
+  text-align: justify;
+}
+.textItemMovie {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 20px;
+  text-align: justify;
+}
+.navigationDet {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  min-width: 100%; 
+  transition: color 0.25s;
+}
+.link:hover,
+.link:focus {
+  color: #ff6347;
+  
+}
