@@ -33,3 +33,24 @@ export const fetchMoviesById = async (movieId) => {
     throw error;
   }
 };
+
+export const fetchCastByMoviesId = async (movieId) => {
+  try {
+    const response = await options.get(`/movie/${movieId}/credits?language=en-US`);
+    return response.data.cast;
+  } catch (error) {
+    console.error("Error fetching movie credits:", error.message);
+    throw error;
+  }
+};
+export const fetchReviewsByMoviesId = async (movieId) => {
+  try {
+    const response = await options.get(
+      `/movie/${movieId}/reviews?language=en-US`
+    );
+    return response.data.results;
+  } catch (error) {
+    console.error("Error fetching movie reviews:", error.message);
+    throw error;
+  }
+};
