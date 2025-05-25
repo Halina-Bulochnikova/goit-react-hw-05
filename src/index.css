@@ -11,6 +11,14 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
+   --main-backgroung: #0e0c0c;
+   --box-shadow: #4107f0e6;
+   --text: #000000;
+   --border: #4107f0e6;
+   --button-text:#4107f0e6;
+   --button-hover: #15a6e9;
+   --pink: #e00fd6;
 }
 
 a {
@@ -28,6 +36,7 @@ body {
   flex-direction: column;
   min-width: 320px;
   min-height: 100vh;
+  background-color: var(--main-backgroung);
 }
 
 h1 {

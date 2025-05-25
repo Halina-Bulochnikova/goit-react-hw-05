@@ -1,6 +1,6 @@
 .HomePageTitle {
     font-size: 2rem;
-    color: #333;
+    color: var(--pink);
     text-align: center;
     margin-top: 20px;
 }

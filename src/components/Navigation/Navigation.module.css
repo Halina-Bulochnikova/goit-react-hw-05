@@ -1,15 +1,16 @@
 .link{
   text-decoration: none;
-  color: black;
+  color: var(--button-text);
   font-weight: 500;
   transition: color 0.3s ease;
-  border: 1px solid rgb(58, 54, 54);
+  border: 1px solid var(--border);
   border-radius: 5px;
   padding: 10px 20px;
-  background-color: rosybrown;
+  background-color: transparent;
+
 }
 .link:hover {
-  color: rgb(212, 109, 137);
+  color:var(--button-hover) ;
 }
 .navigation{
   display: flex;
@@ -20,6 +21,6 @@
   min-width: 100%; 
 }
 .active{
-  color:red;
+  color:rgb(156, 109, 245);
   text-decoration: underline;
 }

@@ -1,8 +1,10 @@
 .header {
-  background-color: white;
-  padding: 16px 32px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--main-backgroung);
+  padding: 16px;
+  box-shadow: 0 10px 10px var(--box-shadow);
   position: sticky;
-  top: 0;
-  z-index: 10;
+  height: 100%;
 }
